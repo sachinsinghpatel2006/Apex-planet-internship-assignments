@@ -1,0 +1,225 @@
+/* --- 1. ADVANCED COLOR PALETTE (CSS Variables) --- */
+:root {
+    /* Backgrounds */
+    --bg-main: #121212;        /* Very Dark Grey (Almost Black) */
+    --bg-card: #1e1e1e;        /* Dark Grey Card */
+    --bg-input: #2c2c2c;       /* Slightly Lighter Input */
+    
+    /* Accents */
+    --primary: #bb86fc;        /* Soft Neon Purple */
+    --primary-hover: #9965f4;
+    --secondary: #03dac6;      /* Teal/Cyan */
+    --secondary-hover: #018786;
+    
+    /* Text */
+    --text-white: #e1e1e1;
+    --text-gray: #a0a0a0;
+    
+    /* Status */
+    --error: #cf6679;          /* Muted Red */
+    --success: #03dac6;        /* Teal for Success */
+    
+    /* Effects */
+    --shadow: 0 8px 16px rgba(0,0,0,0.5);
+    --border-radius: 12px;
+}
+
+/* --- 2. GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-white);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* --- 3. LAYOUT & RESPONSIVENESS --- */
+.main-wrapper {
+    width: 100%;
+    max-width: 1100px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: var(--primary);
+}
+
+.header p {
+    color: var(--text-gray);
+}
+
+/* GRID LAYOUT: Switches to Flex-col on mobile */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* Stack vertically on phones */
+    }
+}
+
+/* --- 4. COMPONENT STYLES --- */
+.card {
+    background-color: var(--bg-card);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.card-header h2 {
+    color: var(--primary);
+    margin-bottom: 20px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+/* Inputs & Buttons */
+input, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: var(--bg-input);
+    border: 2px solid transparent;
+    border-radius: 6px;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--primary);
+    background-color: #383838;
+}
+
+.btn {
+    cursor: pointer;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: 0.3s;
+    color: #121212;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+}
+.btn-primary:hover { background-color: var(--primary-hover); }
+
+.btn-secondary {
+    background-color: var(--secondary);
+    width: 100%;
+    margin-top: 10px;
+}
+.btn-secondary:hover { background-color: var(--secondary-hover); }
+
+/* --- 5. TASK LIST SPECIFIC --- */
+.input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.task-list {
+    list-style: none;
+}
+
+.task-item {
+    background: #252525;
+    padding: 12px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--secondary);
+    animation: slideIn 0.3s ease-out;
+}
+
+.task-item.completed span {
+    text-decoration: line-through;
+    color: var(--text-gray);
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: var(--error);
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.delete-btn:hover { color: #ff8a80; }
+
+/* --- 6. FORM VALIDATION SPECIFIC --- */
+.form-control {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+}
+
+.error-text {
+    color: var(--error);
+    font-size: 0.8rem;
+    margin-top: 5px;
+    display: none; /* Hidden by default */
+}
+
+.form-control.error input, 
+.form-control.error textarea {
+    border-color: var(--error);
+}
+
+.form-control.error .error-text {
+    display: block;
+}
+
+.success-banner {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(3, 218, 198, 0.2);
+    color: var(--success);
+    text-align: center;
+    border-radius: 6px;
+    display: none;
+    border: 1px solid var(--success);
+}
+
+/* Animation */
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
