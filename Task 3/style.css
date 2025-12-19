@@ -1,0 +1,308 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(0, 0, 33);
+    color: white;
+    font-family: 'poppins', sans-serif;
+}
+
+/*  Header */
+.nav {
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgb(18, 18, 62);
+}
+
+/*  List Items  */
+.nav ul {
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul li {
+    list-style: none;
+    margin: 0 23px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(88, 88, 165);
+}
+
+.nav .right {
+    font-size: 1.5rem;
+}
+
+/*  This is main content  */
+.first-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.first-section>div {
+    width: 33%;
+}
+
+.left-section {
+    margin: 25px 0px;
+    font-size: 2.8rem;
+
+}
+
+.right-section img {
+    width: 80%;
+    margin: 50px 0;
+}
+
+.left-section .button {
+    padding: 50px 0;
+}
+
+.btn {
+    padding: 12px;
+    background-color: #1e2167;
+    color: white;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 6px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sec {
+    color: rgb(170, 107, 228);
+    font-weight: 600;
+}
+
+.animation {
+    display: inline-block;
+}
+
+/*  animation */
+#element {
+    color: rgb(146, 80, 208);
+}
+
+
+main hr {
+    border: 0;
+    background: #9c97f1;
+    height: 1.2px;
+    margin: 40px 84px;
+}
+
+/*  Second-- section  */
+.second-section {
+    max-width: 80vw;
+    margin: auto;
+    height: 80vh;
+}
+
+.second-section h1 {
+    font-size: 1.9rem;
+}
+
+.text-grey {
+    color: grey;
+}
+
+.second-section .box {
+    background: white;
+    width: 77vw;
+    height: 2px;
+    margin: 56px 0;
+    display: flex;
+}
+
+.second-section .vertical {
+    height: 93px;
+    width: 1px;
+    background-color: white;
+    margin: 0 120px;
+
+}
+
+.vertical-img1 {
+    width: 23px;
+    position: relative;
+    top: -32px;
+    left: -9px;
+}
+
+.vertical-title {
+    position: relative;
+    top: 75px;
+    width: 150px;
+    font-size: 14px;
+}
+
+.vertical-desc {
+    position: relative;
+    top: 85px;
+    column-rule: grey;
+    width: 150px;
+    font-size: 9px;
+}
+
+footer {
+    background-color: #0e0e1a;
+}
+
+.footer {
+    display: flex;
+    padding: 123px 122px;
+    justify-content: space-evenly;
+}
+
+.footer ul li {
+    list-style: none;
+    margin-left: 10px;
+}
+
+/* .footer-second ul{
+    display: flex;
+} */
+.footer>div {
+    width: 223px;
+}
+
+.footer-text-center {
+    color: grey;
+    text-align: center;
+}
+
+
+/*  Responsive ness  */
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+    .nav {
+        flex-direction: column;
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* HERO SECTION */
+    .first-section {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .first-section>div {
+        width: 100%;
+    }
+
+    .left-section {
+        font-size: 1.8rem;
+        padding: 0 16px;
+    }
+
+    .right-section img {
+        width: 70%;
+        margin: 20px auto;
+        display: block;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+
+    .btn {
+        font-size: 16px;
+        width: 90%;
+    }
+
+    /* TIMELINE FIX */
+    .second-section {
+        height: auto;
+    }
+
+    .second-section .box {
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+    }
+
+    .second-section .vertical {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        background: none;
+    }
+
+    .vertical-title,
+    .vertical-desc {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
+
+    .vertical-img1 {
+        position: static;
+        margin: 0 auto 10px;
+        display: block;
+    }
+
+    /* FOOTER */
+    .footer {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .footer>div {
+        width: 100%;
+    }
+    .second-section .box {
+        background:#14162f;
+    }
+}
+
+
+/*  Tablet  or i pad device  */
+@media (max-width: 900px) {
+
+    .first-section>div {
+        width: 45%;
+    }
+
+    .left-section {
+        font-size: 2.2rem;
+    }
+
+    .second-section .vertical {
+        margin: 0 60px;
+    }
+
+    .footer {
+        padding: 80px 40px;
+    }
+}
+
+.footer-head{
+    color: rgb(12 91 255);
+    text-decoration: underline;
+    font-size: 25px;
+    font-weight: 500;
+    font-style: italic;
+}
