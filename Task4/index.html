@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1 class="heading">Modern Project Hub</h1>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img id="carousel-img" src="https://picsum.photos/id/10/800/400" alt="Carousel Image">
+            </div>
+            <button class="prev" onclick="changeImage(-1)">&#10094;</button>
+            <button class="next" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="api-section">
+            <h2>Daily Inspiration (API)</h2>
+            <div id="data-container">
+                <p>Loading inspiration...</p>
+            </div>
+            <button id="fetch-btn">Get New Quote</button>
+        </section>
+
+        <section class="grid-section">
+            <div class="card"><h3>Feature 1</h3><p>Fully Responsive</p></div>
+            <div class="card"><h3>Feature 2</h3><p>Interactive JS</p></div>
+            <div class="card"><h3>Feature 3</h3><p>API Integration</p></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

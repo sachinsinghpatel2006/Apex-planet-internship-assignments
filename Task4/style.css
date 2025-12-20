@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background-color: #058091a8;
+    text-align: center;
+}
+
+/* Carousel Styles */
+.carousel-container {
+    position: relative;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.heading{
+    color: rgb(12, 24, 104);
+    font-size: 40px;
+    /* border: 4px solid rgb(90, 127, 207); */
+    left: 40px;
+    display: inline-block;
+    text-align: center;
+    font-weight: 700;
+    width: 40vw;
+}
+#data-container{
+    color: purple;
+    text-decoration: dashed;
+    font-weight: 600;
+    font-size: 30px;
+}
+#carousel-img {
+    width: 100%;
+    display: block;
+    transition: 0.5s ease-in-out;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Grid System - Responsive Task */
+.grid-section {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+    /* Mobile: 1 column */
+    grid-template-columns: 1fr; 
+}
+
+/* Desktop View: 3 columns */
+@media (min-width: 768px) {
+    .grid-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background: rgb(78, 129, 153);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
