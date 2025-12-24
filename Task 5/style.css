@@ -1,0 +1,161 @@
+/* --- 1. MODERN RESET & VARIABLES --- */
+:root {
+    --bg: #0a0a0a;
+    --card-bg: #171717;
+    --text: #ffffff;
+    --text-muted: #a1a1aa;
+    --primary: #6366f1; /* Indigo */
+    --accent: #a855f7;  /* Purple */
+    --font: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- 2. NAVIGATION (GLASSMORPHISM) --- */
+.navbar {
+    position: sticky; top: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 5%;
+    background: rgba(10, 10, 10, 0.7); /* See-through dark */
+    backdrop-filter: blur(12px); /* Blur effect */
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; }
+.dot { color: var(--primary); }
+
+.nav-links { display: flex; gap: 2rem; align-items: center; }
+.nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.nav-links a:hover { color: var(--text); }
+
+.btn-login {
+    background: rgba(255,255,255,0.1); padding: 0.5rem 1.2rem;
+    border-radius: 6px; color: white !important;
+}
+.btn-login:hover { background: rgba(255,255,255,0.2); }
+
+/* Mobile Menu Button */
+.menu-toggle { display: none; cursor: pointer; }
+.bar { width: 25px; height: 2px; background: white; margin: 5px 0; }
+
+/* --- 3. HERO SECTION --- */
+.hero {
+    min-height: 90vh;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    position: relative;
+    overflow: hidden;
+}
+
+.pill {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
+    background: rgba(99, 102, 241, 0.2); color: var(--primary);
+    padding: 5px 12px; border-radius: 20px; border: 1px solid var(--primary);
+    margin-bottom: 1.5rem; display: inline-block;
+}
+
+.hero h1 {
+    font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem;
+    font-weight: 800; letter-spacing: -2px;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin-bottom: 2rem; }
+
+.hero-btns { display: flex; gap: 1rem; justify-content: center; }
+.btn-primary {
+    background: var(--text); color: var(--bg); padding: 1rem 2rem;
+    border: none; border-radius: 8px; font-weight: 600; cursor: pointer;
+    transition: transform 0.2s;
+}
+.btn-secondary {
+    background: transparent; color: var(--text); padding: 1rem 2rem;
+    border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; cursor: pointer;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
+
+/* Background Glow Blob */
+.glow-bg {
+    position: absolute; width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(99,102,241,0.15) 0%, rgba(0,0,0,0) 70%);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+    z-index: -1; pointer-events: none;
+}
+
+/* --- 4. BENTO GRID FEATURES --- */
+.features { padding: 5rem 10%; }
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: var(--card-bg); padding: 2rem; border-radius: 16px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: transform 0.3s;
+}
+.card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+
+.wide { grid-column: span 2; } /* Makes card span 2 columns */
+
+.icon { font-size: 2rem; margin-bottom: 1rem; }
+.card h3 { margin-bottom: 0.5rem; }
+.card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Fake CSS Chart for Visuals */
+.fake-chart {
+    display: flex; align-items: flex-end; gap: 10px; height: 100px;
+    margin-top: 2rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1);
+}
+.fake-chart .bar {
+    flex: 1; background: var(--primary); opacity: 0.5; border-radius: 4px 4px 0 0;
+}
+.fake-chart .bar:nth-child(even) { background: var(--accent); }
+
+/* --- 5. ANIMATION UTILITIES --- */
+.hidden { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.show { opacity: 1; transform: translateY(0); }
+
+/* Initial Load Animations */
+.fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; transform: translateY(20px); }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+
+@keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- 6. CTA & FOOTER --- */
+.cta { padding: 5rem 5%; display: flex; justify-content: center; }
+.cta-box {
+    background: linear-gradient(135deg, #1e1b4b, #312e81);
+    padding: 3rem; border-radius: 20px; text-align: center; width: 100%; max-width: 800px;
+}
+.cta h2 { font-size: 2rem; margin-bottom: 1rem; }
+footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: black; flex-direction: column; padding: 2rem; }
+    .nav-links.active { display: flex; }
+    .menu-toggle { display: block; }
+    .wide { grid-column: span 1; }
+}
